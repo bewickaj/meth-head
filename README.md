@@ -42,7 +42,7 @@ java -classpath trimmomatic-0.30.jar org.usadellab.trimmomatic.TrimmomaticPE -th
 | LEADING: | Remove leading low quality or N bases (below quality 3) |
 | TRAILING: | Remove trailing low quality or N bases (below quality 3) |
 | SLIDINGWINDOW: | Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 |
-| MINLEN:50 Drop reads below 50 bases long; <60% of read length (75bp) |
+| MINLEN: | Drop reads below 50 bases long; <60% of read length (75bp) |
 
 ---
 
