@@ -15,8 +15,8 @@ if (@ARGV > 0) {
 	GetOptions (
 		'bismark_CX_report:s' => \$bis,
 		'outfile:s' => \$out,
-		'probability:i' => \$p,
-		'confidence:i' => \$c,
+		'probability:s' => \$p,
+		'confidence:s' => \$c,
 		'help' => \$help
 	);
 }
@@ -50,14 +50,14 @@ while (<BIS>) {
 		else {
 			$prob = 1-&Math::CDF::pbinom($x-1, $n, $p);
 		}
-		if ($prob <= $c) {
-			print OUT "$chr\t$pos\t$strand\t$con\t$meth\t$meth+$noMeth\t1\n";
+		if ($prob < $c) {
+			print OUT "$chr\t$pos\t$strand\t$con\t$meth\t", $meth+$noMeth, "\t1\n";
 		}
 		else {
-			print OUT "$chr\t$pos\t$strand\t$con\t$meth\t$meth+$noMeth\t0\n";
+			print OUT "$chr\t$pos\t$strand\t$con\t$meth\t", $meth+$noMeth, "\t0\n";
 		}
 	}
 	else {
-		print OUT "$chr\t$pos\t$strand\t$con\t$meth\t$meth+$noMeth\t0\n";
+		print OUT "$chr\t$pos\t$strand\t$con\t$meth\t", $meth+$noMeth, "\t0\n";
 	}
 }
