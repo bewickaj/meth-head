@@ -21,7 +21,7 @@ if (@ARGV > 0) {
 	);
 }
 if ($help) {
-	print "Usage: --bismark_CX_report \"name of bismark CX report\" --outfile \"file name of vcf output file\" --probability \"integer indicating the hypothesized probability of success i.e., the non-conversion rate of the chloroplast genome, 0 to 1\" --confidence \"integer indicating confidence level i.e., 0.05 for 95%\"\n";
+	print "Usage: --bismark_CX_report=\"name of bismark CX report\" --outfile=\"file name of vcf output file\" --probability=\"integer indicating the hypothesized probability of success i.e., the non-conversion rate of the chloroplast genome, 0 to 1\" --confidence=\"integer indicating confidence level i.e., 0.05 for 95%\"\n";
 	exit;
 }
 if (($p < 0) or (1 < $p)) {

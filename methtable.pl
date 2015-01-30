@@ -32,7 +32,7 @@ if (@ARGV > 0) {
 	);
 }
 if ($help) {
-	print "Usage: --intersect_infile \"name of outfile from bedtools intersect\" --outfile \"file name of outfile to write to\" --fdr \"yes/no to perform FDR adjustment on p-values\"\n";
+	print "Usage: --intersect_infile=\"name of outfile from bedtools intersect\" --outfile=\"file name of outfile to write to\" --fdr=\"yes/no to perform FDR adjustment on p-values\"\n";
 	exit;
 }
 
